@@ -74,3 +74,201 @@
       @apply bg-background text-foreground;
     }
   }
+
+
+  .login-btn-1 {
+    background: #5451F2;
+}
+
+.login-btn-1:hover{
+     background: #5451F2 !important;   
+}
+
+.login-btn-2 {
+    background: #fff;
+    color: #101828;
+    border: 1px solid #D0D5DD;
+}
+
+.login-btn-2:hover{
+     background: #fff !important;   
+}
+
+.forgot-password a {
+    text-transform: capitalize;
+    color: #5451f2;
+}
+
+.login-wrap {
+  background: #000;
+}
+
+.login-inner-wrap {
+  background: #fff;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0rem 0;
+  height: 35rem;
+  margin-top: 5rem;
+  border-radius: var(--radius);
+}
+
+.header-logo-wrap {
+  background: linear-gradient(180deg, rgba(84, 81, 242, 1) 35%, rgba(16, 24, 40, 1) 100%);
+  height: 75px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding: 1rem;
+}
+
+.login-inner-wrap .remove-style {
+  border-radius: 0 !important;
+  border: 0;
+}
+
+.left-side {
+  background: #000;
+  border: 0;
+}
+
+.right-side {
+  background: #000;
+}
+
+.top-bar-logo {
+  height: 75px;
+  background: linear-gradient(180deg, rgba(84, 81, 242, 1) 35%, rgba(16, 24, 40, 1) 100%);
+  border: 0;
+}
+
+.right-side header {
+  background: #000;
+  border: 0;
+}
+
+.right-side header form {
+  display: flex;
+  justify-content: center;
+}
+
+.right-side header form input {
+  width: 100%;
+  background: #475467;
+  border: 0;
+}
+
+.right-side header form .relative {
+  width: 50%;
+}
+
+.right-side header form input::placeholder {
+  color: #fff;
+}
+
+.right-side header form svg {
+  color: #fff;
+  top: 0.8rem;
+}
+
+.main-nav a.bg-muted {
+  background: #5451F2;
+}
+
+.main-nav a {
+  color: #fff;
+}
+
+.main-nav a:hover{
+  color: #fff;
+}
+
+.main-nav {
+  padding-top: 1rem;
+}
+
+.parent-main {
+  background: #fff;
+  border-top-left-radius: 40px;
+}
+
+.home-topBar h1 {
+  margin-bottom: 0.5rem;
+  color: #101828;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.home-content .full-col {
+  display: flex;
+  margin-top: 1rem;
+  gap: 30px;
+}
+
+.home-content .full-col .col-4 {
+  width: 40%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.home-content .full-col .col-8 {
+  width: 60%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.home-content .common-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-content .common-heading p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #101828;
+}
+
+.home-content .common-heading span {
+  background: #DEE5EF;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-tab .grid-cols-2 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.custom-tab {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.tab-con {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.tab-con .disc {
+  padding-left: 1rem;
+}
+
+.tab-con .disc p {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.custom-calander {
+  margin-top: 1rem;
+}
+
+.home-content .f1{
+  margin-top: 1rem;
+}

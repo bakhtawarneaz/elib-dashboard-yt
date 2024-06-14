@@ -1,24 +1,161 @@
-import { Button } from '@/components/ui/button';
-import { Activity, ArrowUpRight, CreditCard, DollarSign, Users } from 'lucide-react';
-import { Link } from 'react-router-dom';
+// import { Button } from '@/components/ui/button';
+// import { Activity, ArrowUpRight, CreditCard, DollarSign, Users } from 'lucide-react';
+// import { Link } from 'react-router-dom';
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
+// import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+// import { Badge } from '@/components/ui/badge';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from '@/components/ui/table';
+ //import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+// import {
+//     Table,
+//     TableBody,
+//     TableCell,
+//     TableHead,
+//     TableHeader,
+//     TableRow,
+// } from '@/components/ui/table';
 
-const HomePage = () => {
-    return (
+//import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+//import Tabs from '@shadcn/ui/tabs';
+//import Tabs from '@/components/ui/Tabs';
+
+import React from 'react';
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Calendar } from "@/components/ui/calendar";
+
+function HomePage() {
+
+    const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+    return ( 
         <>
-            <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
+            <main className='home-main'>
+                <div className='home-topBar'>
+                    <h1>Hello Wolfgang</h1>
+                    <p>Here you can see an overview of your most important tasks, as well relevant data on employees and recruiting processes </p>
+                </div>
+                <div className="home-content">
+                    <div className="full-col">
+                        <div className="col-4">
+                            <div className="common-heading">
+                                <p>Inbox</p>
+                                <span><img src={"/src/assets/h1.png"} />Tasks</span>
+                            </div>
+                            <Tabs defaultValue="account" className="w-[400px] custom-tab">
+                                <TabsList className="grid w-full grid-cols-2">
+                                    <TabsTrigger value="all_task">All tasks</TabsTrigger>
+                                    <TabsTrigger value="employees">Employees</TabsTrigger>
+                                    <TabsTrigger value="recruiting">Recruiting</TabsTrigger>
+                                </TabsList>
+                                <TabsContent value="all_task">
+                                    <div className="tab-con">
+                                        <div className="pic">
+                                            <img src={"/src/assets/Avatar.png"} />     
+                                        </div>
+                                        <div className="disc">
+                                            <p>Diana Jones requested vacation</p>   
+                                            <p>from 05.06.2024 to 20.05.2024</p>
+                                        </div>    
+                                    </div>
+                                    <div className="tab-con">
+                                        <div className="pic">
+                                            <img src={"/src/assets/Avatar.png"} />     
+                                        </div>
+                                        <div className="disc">
+                                            <p>Diana Jones requested vacation</p>   
+                                            <p>from 05.06.2024 to 20.05.2024</p>
+                                        </div>    
+                                    </div>
+                                    <div className="tab-con">
+                                        <div className="pic">
+                                            <img src={"/src/assets/Avatar.png"} />     
+                                        </div>
+                                        <div className="disc">
+                                            <p>Diana Jones requested vacation</p>   
+                                            <p>from 05.06.2024 to 20.05.2024</p>
+                                        </div>    
+                                    </div>
+                                    <div className="tab-con">
+                                        <div className="pic">
+                                            <img src={"/src/assets/Avatar.png"} />     
+                                        </div>
+                                        <div className="disc">
+                                            <p>Diana Jones requested vacation</p>   
+                                            <p>from 05.06.2024 to 20.05.2024</p>
+                                        </div>    
+                                    </div>
+                                    <div className="tab-con">
+                                        <div className="pic">
+                                            <img src={"/src/assets/Avatar.png"} />     
+                                        </div>
+                                        <div className="disc">
+                                            <p>Diana Jones requested vacation</p>   
+                                            <p>from 05.06.2024 to 20.05.2024</p>
+                                        </div>    
+                                    </div>
+                                </TabsContent>
+                                <TabsContent value="employees">
+                                    <div className="tab-con">
+                                        <div className="pic">
+                                            <img src={"/src/assets/Avatar.png"} />     
+                                        </div>
+                                        <div className="disc">
+                                            <p>Diana Jones requested vacation</p>   
+                                            <p>from 05.06.2024 to 20.05.2024</p>
+                                        </div>    
+                                    </div>
+                                </TabsContent>
+                                <TabsContent value="recruiting">
+                                    <div className="tab-con">
+                                        <div className="pic">
+                                            <img src={"/src/assets/Avatar.png"} />     
+                                        </div>
+                                        <div className="disc">
+                                            <p>Diana Jones requested vacation</p>   
+                                            <p>from 05.06.2024 to 20.05.2024</p>
+                                        </div>    
+                                    </div>
+                                </TabsContent>
+                            </Tabs>
+                        </div>
+                        <div className="col-8">
+                            <div className="common-heading">
+                                <p>Calendar</p>
+                                <span><img src={"/src/assets/h1.png"} />Calendar</span>
+                            </div>
+                            <Calendar
+                                mode="single"
+                                selected={date}
+                                onSelect={setDate}
+                                className="rounded-md border custom-calander"
+                            />
+                        </div>
+                    </div>
+                    <div className="full-col">
+                        <div className="col-4">
+                            <div className="common-heading">
+                                <p>Recruiting</p>
+                                <span><img src={"/src/assets/h1.png"} />Recruiting</span>
+                            </div>
+                            <div className="f1">
+                                <img src={"/src/assets/f1.png"} />
+                            </div>
+                        </div>
+                        <div className="col-8">
+                            <div className="common-heading">
+                                <p>Employee development</p>
+                                <span><img src={"/src/assets/h1.png"} />Employee</span>
+                            </div>
+                            <div className="f1">
+                                <img src={"/src/assets/f2.png"} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            {/* <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
                 <div className="flex min-h-screen w-full flex-col">
                     <main className="flex flex-1 flex-col gap-4 md:gap-6">
                         <div className="grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
@@ -310,9 +447,9 @@ const HomePage = () => {
                         </div>
                     </main>
                 </div>
-            </main>
+            </main> */}
         </>
     );
-};
+}
 
 export default HomePage;

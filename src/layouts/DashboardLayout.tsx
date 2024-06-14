@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Input } from '@/components/ui/input';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import useTokenStore from '@/store';
+//import useTokenStore from '@/store';
 import {
     Bell,
     CircleUser,
@@ -24,35 +24,36 @@ import {
     ShoppingCart,
     Users,
 } from 'lucide-react';
-import { Link, Navigate, NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 
 const DashboardLayout = () => {
-    const { token, setToken } = useTokenStore((state) => state);
+    //const { token, setToken } = useTokenStore((state) => state);
 
-    if (token === '') {
-        return <Navigate to={'/auth/login'} replace />;
-    }
+    // if (token === '') {
+    //     return <Navigate to={'/auth/login'} replace />;
+    // }
 
-    const logout = () => {
-        console.log('Logging out!');
-        setToken('');
-    };
+    // const logout = () => {
+    //     console.log('Logging out!');
+    //     setToken('');
+    // };
 
     return (
         <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-            <div className="hidden border-r bg-muted/40 md:block">
+            <div className="hidden border-r bg-muted/40 md:block left-side">
                 <div className="flex h-full max-h-screen flex-col gap-2">
-                    <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
-                        <Link to="/" className="flex items-center gap-2 font-semibold">
+                    <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6 top-bar-logo">
+                        {/* <Link to="/" className="flex items-center gap-2 font-semibold">
                             <Package2 className="h-6 w-6" />
                             <span className="">Coder's Book</span>
                         </Link>
                         <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
                             <Bell className="h-4 w-4" />
                             <span className="sr-only">Toggle notifications</span>
-                        </Button>
+                        </Button> */}
+                        <img src={"/src/assets/logo.png"} />
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 main-nav">
                         <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
                             <NavLink
                                 to="/dashboard/home"
@@ -61,24 +62,95 @@ const DashboardLayout = () => {
                                         isActive && 'bg-muted'
                                     }`;
                                 }}>
-                                <Home className="h-4 w-4" />
-                                Home
+                                {/* <Home className="h-4 w-4" /> */}
+                                <img src={"/src/assets/m1.png"} />
+                                Dashboard
                             </NavLink>
 
                             <NavLink
-                                to="/dashboard/books"
+                                to="/auth/login"
                                 className={({ isActive }) => {
                                     return `flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary ${
                                         isActive && 'bg-muted'
                                     }`;
                                 }}>
-                                <Package className="h-4 w-4" />
-                                Books{' '}
+                                <img src={"/src/assets/m2.png"} />
+                                Inbox{' '}
+                            </NavLink>
+                            <NavLink
+                                to="/auth/login"
+                                className={({ isActive }) => {
+                                    return `flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary ${
+                                        isActive && 'bg-muted'
+                                    }`;
+                                }}>
+                                <img src={"/src/assets/m3.png"} />
+                                Employees{' '}
+                            </NavLink>
+                            <NavLink
+                                to="/auth/login"
+                                className={({ isActive }) => {
+                                    return `flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary ${
+                                        isActive && 'bg-muted'
+                                    }`;
+                                }}>
+                                <img src={"/src/assets/m3.png"} />
+                                Recruiting{' '}
+                            </NavLink>
+                            <NavLink
+                                to="/auth/login"
+                                className={({ isActive }) => {
+                                    return `flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary ${
+                                        isActive && 'bg-muted'
+                                    }`;
+                                }}>
+                                <img src={"/src/assets/m4.png"} />
+                                Calendar{' '}
+                            </NavLink>
+                            <NavLink
+                                to="/auth/login"
+                                className={({ isActive }) => {
+                                    return `flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary ${
+                                        isActive && 'bg-muted'
+                                    }`;
+                                }}>
+                                <img src={"/src/assets/m5.png"} />
+                                Reporting{' '}
+                            </NavLink>
+                            <NavLink
+                                to="/auth/login"
+                                className={({ isActive }) => {
+                                    return `flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary ${
+                                        isActive && 'bg-muted'
+                                    }`;
+                                }}>
+                                <img src={"/src/assets/m6.png"} />
+                                Automations{' '}
+                            </NavLink>
+                            <NavLink
+                                to="/auth/login"
+                                className={({ isActive }) => {
+                                    return `flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary ${
+                                        isActive && 'bg-muted'
+                                    }`;
+                                }}>
+                                <img src={"/src/assets/m7.png"} />
+                                Imports{' '}
+                            </NavLink>
+                            <NavLink
+                                to="/auth/login"
+                                className={({ isActive }) => {
+                                    return `flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary ${
+                                        isActive && 'bg-muted'
+                                    }`;
+                                }}>
+                                <img src={"/src/assets/m8.png"} />
+                                Marketplace{' '}
                             </NavLink>
                         </nav>
                     </div>
-                    <div className="mt-auto p-4">
-                        <Card x-chunk="dashboard-02-chunk-0">
+                    <div className="mt-auto p-4 main-nav">
+                        {/* <Card x-chunk="dashboard-02-chunk-0">
                             <CardHeader className="p-2 pt-0 md:p-4">
                                 <CardTitle>Upgrade to Pro</CardTitle>
                                 <CardDescription>
@@ -91,11 +163,21 @@ const DashboardLayout = () => {
                                     Upgrade
                                 </Button>
                             </CardContent>
-                        </Card>
+                        </Card> */}
+                        <NavLink
+                                to="/dashboard/inbox"
+                                className={({ isActive }) => {
+                                    return `flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary ${
+                                        isActive && 'bg-muted'
+                                    }`;
+                                }}>
+                                 <img src={"/src/assets/m9.png"} />
+                                Support{' '}
+                        </NavLink>
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col right-side">
                 <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
                     <Sheet>
                         <SheetTrigger asChild>
@@ -190,14 +272,17 @@ const DashboardLayout = () => {
                             <DropdownMenuItem>Support</DropdownMenuItem>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem>
-                                <Button onClick={logout} variant={'link'}>
+                                {/* <Button onClick={logout} variant={'link'}>
+                                    Logout
+                                </Button> */}
+                                <Button variant={'link'}>
                                     Logout
                                 </Button>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
                 </header>
-                <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
+                <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 parent-main">
                     <Outlet />
                 </main>
             </div>
